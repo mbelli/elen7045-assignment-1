@@ -11,6 +11,8 @@ import za.ac.wits.eie.dodgegame.scene.GamePlayingScene;
 /**
  *
  * @author Thierry
+ * 
+ * DodgeGameBoard the main entry point of the game
  */
 public class DodgeGameBoard extends GameEngine{
     

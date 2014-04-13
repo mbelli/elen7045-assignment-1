@@ -11,10 +11,12 @@ package za.ac.wits.eie.dodgegame.engine;
 public class GameScene {
     private static GameSceneCanvas gameSceneCanvas;
     
+    //constructor set the game scence canvas
     public GameScene(){
         setSceneCanvas(new GameSceneCanvas());
     }
 
+    //get game scene canvas
     public static GameSceneCanvas getGameSceneCanvas() {
         return gameSceneCanvas;
     }

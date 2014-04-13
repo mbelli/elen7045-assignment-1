@@ -20,6 +20,8 @@ public class GameSceneCanvas extends JPanel implements ActionListener {
     private Color defaultSceneColor = new Color(30,144,255,200);
     private Timer timer;
 	
+    //constructor set the background and timer 
+    //for the raindrops interval
     public GameSceneCanvas(){
         setBackground(defaultSceneColor.brighter());
 	setFocusable(true);

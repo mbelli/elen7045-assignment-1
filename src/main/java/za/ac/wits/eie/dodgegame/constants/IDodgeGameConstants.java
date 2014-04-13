@@ -11,6 +11,7 @@ import java.awt.Dimension;
  * @author Thierry
  */
 public interface IDodgeGameConstants {
+    //different constants to be used on the game board
     public static final String TITLE = "The Dodge Game";
     public static final Dimension GAME_WIN_SIZE = new Dimension(1024, 572);
     public static final String RAIN_SPRITE_CLASS = "Rain";

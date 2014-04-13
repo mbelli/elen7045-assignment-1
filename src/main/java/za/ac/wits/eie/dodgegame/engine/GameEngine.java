@@ -19,12 +19,14 @@ public class GameEngine {
     private JFrame window;
     private GameScene gameScene;
     
+    //constructor set up the game window and title
     public GameEngine(String title, Dimension windowSize) {
         this.title = title;
         this.windowSize = windowSize;
         initGame();
     }
     
+    //initialise the game frame
     private void initGame() {
         window = new JFrame(title);
 	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,6 +39,7 @@ public class GameEngine {
         this.gameScene = gameScene;
     }
     
+    //start the game
     public void runGame(){
         if(gameScene != null){
             window.add(gameScene.getGameSceneCanvas(), BorderLayout.CENTER);
