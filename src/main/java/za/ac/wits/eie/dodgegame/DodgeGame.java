@@ -6,13 +6,11 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-import za.ac.wits.eie.dodgegame.content.Texture;
 import za.ac.wits.eie.dodgegame.graphics.Game;
 import za.ac.wits.eie.dodgegame.input.GameInputKey;
 import za.ac.wits.eie.dodgegame.sceneobject.SceneObject;
 import za.ac.wits.eie.dodgegame.sceneobject.Sprite;
 import za.ac.wits.eie.dodgegame.sceneobject.Vector2;
-import za.ac.wits.eie.dodgegame.sceneobject.colliders.ObjectCollider;
 import za.ac.wits.eie.dodgegame.timer.GameTimer;
 import za.ac.wits.eie.dodgegame.timer.GameTimedEvent;
 
@@ -31,18 +29,15 @@ public class DodgeGame extends Game {
     private Dimension windowSize = new Dimension(640, 480);
     
     /**
-     * The player controlled character iron man
+     * The player controlled character player
      */
-    private Texture playerTexture;
     private Sprite player;
     /**
      * Game controller variables
      */
-    private Vector2 playerStartPosition = Vector2.newInstance(320, 420);
     private int moveSpeed = 3;
-    private int noOfBombs = 2;
-    GameTimer bombTimer = new GameTimer();
-    GameTimer bombCreatorTimer = new GameTimer();
+    private int noOfRaindrops = 2;
+    GameTimer raindropTimer = new GameTimer();
     
     @Override
     public void initialise() {
@@ -55,22 +50,14 @@ public class DodgeGame extends Game {
     public void onStart() {
     	
         // Create player character
-    	player = new Sprite();
-        playerTexture = new Texture(content.getContent("player"));
-        player.transform.position = playerStartPosition;
-        player.texture = playerTexture;
-        player.className = "Player";
-        player.name = "IronMan";
-        player.layerId = 5;
-        player.width = 60;
-        player.height = 60;
-        player.collider = new ObjectCollider(player);
+    	Player player1 = new Player();
+    	player = player1.getNewInstance(Vector2.newInstance(320, 420), content);
         sceneGraph.addSceneObject(player);
 
         // Spawn a rain sprite at every 3 seconds after 1 minute delay
-        bombTimer.scheduleAtFixedRate(1500, 2000, new GameTimedEvent() {
+        raindropTimer.scheduleAtFixedRate(1500, 1500, new GameTimedEvent() {
             public void run() {
-                for (int i = 0; i <= noOfBombs; i++) {
+                for (int i = 0; i <= noOfRaindrops; i++) {
                     Raindrop raindrop = Raindrop.newInstance(Vector2.newInstance(getRandomNo(610), -getRandomNo(200)), content);
                     sceneGraph.addSceneObject(raindrop);
                 }
