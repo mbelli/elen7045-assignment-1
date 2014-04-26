@@ -9,7 +9,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import javax.swing.JPanel;
 
 import za.ac.wits.eie.dodgegame.input.GameKeyInputManager;
-import za.ac.wits.eie.dodgegame.input.GameMouseInputManager;
 import za.ac.wits.eie.dodgegame.sceneobject.SceneObject;
 
 
@@ -32,7 +31,6 @@ public class GraphicsDeviceCanvas extends JPanel {
     public GraphicsDeviceCanvas() {
         listOfSceneObjects = new CopyOnWriteArrayList<SceneObject>();
         addKeyListener(GameKeyInputManager.getInstance());
-        addMouseListener(GameMouseInputManager.getInstance());
         setDoubleBuffered(true);
         setFocusable(true);
     }

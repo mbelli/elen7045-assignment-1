@@ -6,6 +6,15 @@ import za.ac.wits.eie.dodgegame.sceneobject.Sprite;
 import za.ac.wits.eie.dodgegame.sceneobject.Vector2;
 import za.ac.wits.eie.dodgegame.sceneobject.colliders.ObjectCollider;
 
+/**
+ * This is the player object
+ *
+ * @author Thierry Mbah
+ * @since 10 April 2014
+ * @version 1.0
+ *
+ */
+
 public class Player extends Sprite {
 	/**
      * The player controlled character player
